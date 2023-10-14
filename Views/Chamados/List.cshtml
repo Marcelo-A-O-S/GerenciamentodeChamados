@@ -1,0 +1,80 @@
+﻿@model IEnumerable<gerenciamentodechamados.Models.Chamado>
+
+@{
+    ViewData["Title"] = "List";
+}
+
+<h1>List</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tecnico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dataDeVencimento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nivelPrioridade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.notas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dataDeConclusao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tipoDeManutenção)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tecnico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dataDeVencimento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nivelPrioridade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.notas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dataDeConclusao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tipoDeManutenção)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
